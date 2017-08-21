@@ -8,31 +8,42 @@ namespace Delagates
     {
         public Transform target;
         public GameObject orcPrefab, trollPrefab;
-        public int minAmount = 0, maxAmount = 20;
+        public int minAmount = 0, maxAmount = 20, currentAmount;
         public float spawnRate = 1f;
 
         delegate void SpawnerFunc(int amount);
         private List<SpawnerFunc> spawnerFunc = new List<SpawnerFunc>();
+        private int enemySpawn;
 
-
-        // Use this for initialization
         void Awake()
         {
             //Assign Delagates to list here 
-            
         }
+
         IEnumerator SpawnerFuntion(int num)
         {
-
-            yield return num;
+            if (num == 1)
+            {
+                SpawnOrc(1);
+                enemySpawn++;
+                yield return null;
+            }
+            else 
+            {
+                enemySpawn++;
+                SpawnTroll(1);
+                yield return null;
+            }
+            
         }
+
         void SpawnOrc(int amount)
         {
             for (int i = 0; i < amount; i++)
             {
                 Instantiate(orcPrefab);
+               
             }
-            
         }
 
         void SpawnTroll(int amount)
@@ -45,7 +56,10 @@ namespace Delagates
 
         void Update()
         {
-
+            if (currentAmount > maxAmount)
+            {
+                SpawnerFuntion(Random.Range(1,2));
+            }
         }
     }
 
