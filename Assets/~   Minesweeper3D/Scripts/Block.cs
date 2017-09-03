@@ -43,8 +43,27 @@ namespace Minesweeper
         {
             if (adjcentMines > 0)
             {
-
+                textElement.text = adjcentMines.ToString();
+                if (adjcentMines >= 0 && adjcentMines < textColors.Length)
+                {
+                    textElement.color = textColors[adjcentMines];
+                }
             }
+        }
+
+        public void Reveal(int adjacentMines)
+        {
+            isRevealed = true;
+            if (isMine)
+            {
+                mine.gameObject.SetActive(true);
+                mine.SetParent(null);
+            }
+            else
+            {
+                UpdateText(adjacentMines);
+            }
+            gameObject.SetActive(false);
         }
 
         // Update is called once per frame
