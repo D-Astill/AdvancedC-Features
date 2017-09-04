@@ -36,7 +36,7 @@ namespace Minesweeper
             }
             //Detach text element
             textElement.transform.SetParent(null);
-            isMine = Random.value < 0.05f;
+            isMine = Random.value < 1f;
         }
 
         void UpdateText(int adjcentMines)
@@ -51,7 +51,7 @@ namespace Minesweeper
             }
         }
 
-        public void Reveal(int adjacentMines)
+        public void Reveal(int adjacentMines = 0)
         {
             isRevealed = true;
             if (isMine)

@@ -95,6 +95,7 @@
     <Compile Include="Assets\3 - AbstractClasses\Scripts\Weapons\PlasmaCanon.cs" />
     <Compile Include="Assets\3 - AbstractClasses\Scripts\Weapons\Shotgun.cs" />
     <Compile Include="Assets\3 - AbstractClasses\Scripts\Weapons\Weapon.cs" />
+    <Compile Include="Assets\4 - Recursion\Scripts\RecursiveSpawner.cs" />
     <Compile Include="Assets\~   Minesweeper3D\Scripts\Block.cs" />
     <Compile Include="Assets\~   Minesweeper3D\Scripts\Grid.cs" />
     <Compile Include="Assets\~   Minesweeper3D\Scripts\bombRotation.cs" />
