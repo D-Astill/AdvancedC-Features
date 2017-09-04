@@ -70,35 +70,18 @@ namespace Minesweeper
                         int desiredX = b.x + x;
                         int desiredY = b.y + y;
                         int desiredZ = b.z + z;
-                        if (desiredX <= height)
+                        if (desiredX <= height && desiredX > 0 && desiredY <= width && desiredY > 0 && desiredZ <= depth && desiredZ > 0)
                         {
                             if (b.isMine == true)
                             {
                                 count++;
                             }
                         }
-                        if (desiredY <= height)
-                        {
-                            if (b.isMine == true)
-                            {
-                                count++;
-                            }
-                        }
-                        if (desiredZ <= height)
-                        {
-                            if (b.isMine == true)
-                            {
-                                count++;
-                            }
-                        }
+                   
                     }
                 }
             }
-        }
-        // Update is called once per frame
-        void Update()
-        {
-
+            return count;
         }
     }
 
