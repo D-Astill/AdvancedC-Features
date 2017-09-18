@@ -68,7 +68,8 @@ namespace AbstractClasses
                 Handles.DrawWireArc(pos, Vector3.forward, rightDir, angle * 2, radius);
             }
         }
-    }
 #endif
+
+    }
 
 }

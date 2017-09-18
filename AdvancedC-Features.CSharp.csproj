@@ -77,6 +77,8 @@
   <ItemGroup>
     <Compile Include="Assets\!Globals\Scripts\CameraOrbitWithZoom.cs" />
     <Compile Include="Assets\!Globals\Scripts\DestroyOnInvis.cs" />
+    <Compile Include="Assets\!Globals\Scripts\DisownSelfOnStart.cs" />
+    <Compile Include="Assets\!Globals\Scripts\NameGenerator.cs" />
     <Compile Include="Assets\!Globals\Scripts\RotateToVelocity2D.cs" />
     <Compile Include="Assets\1- Generics\Scripts\CustomList.cs" />
     <Compile Include="Assets\1- Generics\Scripts\GenericsTest.cs" />
@@ -95,9 +97,20 @@
     <Compile Include="Assets\3 - AbstractClasses\Scripts\Weapons\PlasmaCanon.cs" />
     <Compile Include="Assets\3 - AbstractClasses\Scripts\Weapons\Shotgun.cs" />
     <Compile Include="Assets\3 - AbstractClasses\Scripts\Weapons\Weapon.cs" />
+    <Compile Include="Assets\4 - Recursion\Scripts\RecursiveSpawner.cs" />
     <Compile Include="Assets\~   Minesweeper3D\Scripts\Block.cs" />
     <Compile Include="Assets\~   Minesweeper3D\Scripts\Grid.cs" />
     <Compile Include="Assets\~   Minesweeper3D\Scripts\bombRotation.cs" />
+    <Compile Include="Assets\~ GolfWithManny\LowPolyWater\Demo\Scripts\DemoFreeFlyCamera.cs" />
+    <Compile Include="Assets\~ GolfWithManny\LowPolyWater\Scripts\LowPolyWater.cs" />
+    <Compile Include="Assets\~ GolfWithManny\LowPolyWater\Scripts\src\LPWEdgeBlend.cs" />
+    <Compile Include="Assets\~ GolfWithManny\LowPolyWater\Scripts\src\LPWNoise.cs" />
+    <Compile Include="Assets\~ GolfWithManny\Scripts\Controller.cs" />
+    <Compile Include="Assets\~ GolfWithManny\Scripts\Player.cs" />
+    <Compile Include="Assets\~ GolfWithManny\Scripts\UiManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\~ GolfWithManny\LowPolyWater\Shaders\LowPolyWater.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
