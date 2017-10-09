@@ -11,7 +11,8 @@ namespace Networking
         public float jumpHeight = 2.0f;
 
         private bool isGrounded = false;
-        private Rigidbody rb;
+        [HideInInspector]
+        public Rigidbody rb;
         void Awake()
         {
             rb = GetComponent<Rigidbody>();

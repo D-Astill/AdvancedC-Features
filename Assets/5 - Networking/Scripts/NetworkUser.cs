@@ -10,8 +10,11 @@ namespace Networking
     {
         public Camera cam;
         public AudioListener audLis;
+        [SyncVar] Vector3 synePos;
+        [SyncVar] Quaternion syncRot;
+        [Range(0,1)]
+        public float lerpRate = 1f;
         private Player player;
-
         void Start()
         {
             player = GetComponent<Player>();
@@ -35,7 +38,36 @@ namespace Networking
                 {
                     player.Jump();
                 }
+                Rigidbody rigid = player.rb;
+                Cmd_SendPositionToServer(rigid.position);
+                Cmd_SendRotationToServer(rigid.rotation);
             }
+            else
+            {
+                LerpPos();
+                LerpRot();
+            }
+        }
+
+        void LerpPos()
+        {
+            Rigidbody rb = player.rb;
+            rb.position = Vector3.Lerp(rb.position, synePos, lerpRate);
+        }
+        void LerpRot()
+        {
+            Rigidbody rb = player.rb;
+            rb.rotation = Quaternion.Lerp(rb.rotation, syncRot, lerpRate);
+        }
+        [Command]
+        void Cmd_SendPositionToServer(Vector3 pos)
+        {
+            synePos = pos;
+        }
+        [Command]
+        void Cmd_SendRotationToServer(Quaternion rot)
+        {
+            syncRot = rot;
         }
     }
 
